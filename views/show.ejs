@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+
+<div class="card">
+  <h2 class="card-title"> <%= blog.title%> </h2>
+  <img src="<%=blog.image%>" class="card-img-top">
+  <span><%= blog.created.toDateString() %> </span>
+  <div class="card-text description">
+    <p> <%= blog.body %> </p>
+  </div>
+  <a href="/blogs/<%=blog._id%>/edit" class="btn btn-primary">
+    Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+  </a>
+  <form method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
+    <button class="btn btn-danger" type="submit">DELETE <i class="fa fa-trash" aria-hidden="true"></i></button>
+  </form>
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card text-left">
+        <!-- <img class="card-img-top" src="holder.js/100px180/" alt=""> -->
+        <div class="card-body">
+          <h4 class="card-title">New Blog</h4>
+          <form action="/blogs" method="POST">
+            <div class="form-group">
+                <input type="text" name="blog[title]" class="form-control" placeholder="Title" aria-describedby="helpId">
+                <input type="text" name="blog[image]" class="form-control" placeholder="image" aria-describedby="helpId">
+                <textarea required name="blog[body]" class="form-control" placeholder="Enter Text Here..." aria-describedby="helpId"></textarea>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer %>

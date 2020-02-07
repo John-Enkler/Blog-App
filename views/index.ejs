@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">RESTful Blog <i class="fa fa-hand-peace-o" aria-hidden="true"></i></h1>
+          <p class="lead">Made with RESTful Development and Bootstrap!</p>
+          <hr class="my-2">
+          <nav class="nav justify-content-center">
+            <a class="nav-link active" href="#">Active link</a>
+            <a class="nav-link" href="#">Link</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <% blogs.forEach(function(blog){ %>
+      <div class="card text-left">
+        <img class="card-img-top" src="<%=blog.image%>">
+        <div class="card-body">
+          <h2 class="card-title"> <%= blog.title%> </h2>
+          <p class="card-text"><%= blog.body.substring(0, 100) %> <a href="/blogs/<%=blog._id%>">...Read More</a></p>
+          <!-- <a href="/blogs/<%=blog._id%>">Read More...</a> -->
+          <span><%= blog.created.toDateString() %> </span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+<!-- <h1>Index Page!</h1> -->
+<!-- <% blogs.forEach(function(blog){ %>
+<div>
+  <h2> <%= blog.title%> </h2>
+  <img src="<%=blog.image%>">
+  <span><%= blog.created.toDateString() %> </span>
+  <p> <%= blog.body.substring(0, 100) %>... </p>
+  <a href="/blogs/<%=blog._id%>">Read More...</a>
+</div>
+<% }) %> -->
+
+<% include ./partials/footer %>
